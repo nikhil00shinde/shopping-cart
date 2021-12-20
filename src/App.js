@@ -1,5 +1,28 @@
+import Navbar from "./components/navbar";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Preview from "./components/preview";
+import Home from "./components/home";
+import Cart from "./components/cart";
+
 let App = () => {
-	return <div>Hello</div>;
+	return (
+		<>
+			<Router>
+				<Navbar />
+				<Switch>
+					<Route path="/cart">
+						<Cart />
+					</Route>
+					<Route path="/preview">
+						<Preview />
+					</Route>
+					<Route path="/">
+						<Home />
+					</Route>
+				</Switch>
+			</Router>
+		</>
+	);
 };
 
 export default App;
